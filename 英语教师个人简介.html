@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语教师 - 个人简介</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-image {
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto 20px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Qualifications */
+        .qualifications {
+            background: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .qualification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .qualification-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .qualification-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .qualification-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .qualification-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .qualification-card p {
+            color: #555;
+        }
+
+        /* Teaching Experience */
+        .experience {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .year {
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Courses */
+        .courses {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .courses .section-title {
+            color: white;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .course-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .course-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .course-card li {
+            padding: 5px 0;
+            opacity: 0.9;
+        }
+
+        .course-card li:before {
+            content: "✓ ";
+            margin-right: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">📚 English Teacher</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#qualifications">资质证书</a></li>
+                    <li><a href="#experience">教学经验</a></li>
+                    <li><a href="#courses">课程介绍</a></li>
+                    <li><a href="#contact">联系方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>专业英语教学，助力梦想起航</h1>
+            <p>资深英语教师，专注于帮助学生提高英语能力，实现学业和职业目标</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="profile-image">
+                    <div class="profile-placeholder">👨‍🏫</div>
+                    <p style="font-style: italic; color: #666;">您的照片</p>
+                </div>
+                <div class="about-text">
+                    <h2>关于我</h2>
+                    <p>我是一名拥有超过10年教学经验的英语教师，致力于帮助学生在英语学习的道路上取得进步。我相信每个学生都有学习英语的潜力，关键在于找到适合的学习方法和坚持不懈的努力。</p>
+                    <p>我的教学理念是：因材施教，寓教于乐。我会根据每个学生的具体情况和需求，制定个性化的学习计划，让英语学习变得更有趣、更高效。</p>
+                    <p>无论是英语口语提升、考试备考，还是商务英语、学术写作，我都能为您提供专业的指导和建议。让我们一起开启英语学习之旅吧！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="qualifications" id="qualifications">
+        <div class="container">
+            <h2 class="section-title">资质证书</h2>
+            <div class="qualification-grid">
+                <div class="qualification-card">
+                    <div class="qualification-icon">🎓</div>
+                    <h3>教育背景</h3>
+                    <p>英国南安普顿大学硕士学历 Tesol 专业，拥有扎实的英语语言学和文学功底，深谙英语教学理论和方法。</p>
+                </div>
+                <div class="qualification-card">
+                    <div class="qualification-icon">📜</div>
+                    <h3>教师资格认证</h3>
+                    <p>持有国家高中英语教师资格证书，英语专业八级，雅思6.5，具备正规的教学资格，专业水平获得官方认可。</p>
+                </div>
+                <div class="qualification-card">
+                    <div class="qualification-icon">🌟</div>
+                    <h3>专业培训</h3>
+                    <p>参加过多项英语教学专业培训，包括TESOL认证，教学方法与时俱进。</p>
+                </div>
+                <div class="qualification-card">
+                    <div class="qualification-icon">📚</div>
+                    <h3>语言能力</h3>
+                    <p>英语专业八级水平，流利的英语口语和写作能力，纯正的发音。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">教学经验</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>资深英语教师</h3>
+                    <span class="year">2018年至今</span>
+                    <p>在知名教育培训机构担任英语教师，专注于初高中，雅思等考试培训，帮助众多学生成功考取理想分数，进入海外名校。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>高中英语教师</h3>
+                    <span class="year">2015年-2018年</span>
+                    <p>在重点高中担任英语教师，负责高中英语教学，培养学生英语综合能力，多名学生在高考英语中取得优异成绩。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>大学英语助教</h3>
+                    <span class="year">2013年-2015年</span>
+                    <p>在大学期间担任英语助教，协助教授进行大学英语教学，积累了丰富的教学实践经验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2 class="section-title">课程介绍</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3>🎯 雅思备考</h3>
+                    <ul>
+                        <li>听说读写四项全面提升</li>
+                        <li>真题解析与技巧传授</li>
+                        <li>模拟考试与评分反馈</li>
+                        <li>个性化学习计划制定</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3>💬 英语口语提升</h3>
+                    <ul>
+                        <li>日常对话场景练习</li>
+                        <li>发音纠正与语调训练</li>
+                        <li>话题讨论与表达技巧</li>
+                        <li>自信心培养</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3>📝 初高中英语精准辅导</h3>
+                    <ul>
+                        <li>成绩提升</li>
+                        <li>专项题型训练</li>
+                        <li>学习方法指导</li>
+                        <li>作文批改与反馈</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3>📖 英语学习咨询</h3>
+                    <ul>
+                        <li>精准学习规划</li>
+                        <li>英语四六级相关学习知道</li>
+                        <li>词汇积累方法指导</li>
+                        <li>精准解决自身学习困惑</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-content">
+                <p>如果您对我的课程感兴趣，或者有任何英语学习方面的问题，欢迎随时联系我！</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <p>354005227@qq.com
+</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <p>138-0000-0000</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>💬</span>
+                        <p>微信：KarryLuwechatID</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 英语教师个人简介. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
+</html>
